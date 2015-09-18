@@ -1,28 +1,72 @@
+/**
+  @module svg-shapes
+*/
 import Ember from 'ember';
 import layout from '../templates/components/svg-triangle';
 
+/**
+  @class SvgTriangleComponent
+  @namespace SvgShapes
+*/
 export default Ember.Component.extend({
 
     layout: layout,
 
+    /**
+      @property tagName
+      @type {String}
+      @private
+      @default 'svg'
+    */
     tagName: 'svg',
-	direction: null,
-	size: "10",
-	classNames: ['svg-triangle'],
-	attributeBindings: ['style'],
 
-    /*
+    /**
+      @property direction
+      @type {String}
+    */
+	direction: null,
+
+    /**
+      This value is used to set the height and width of the svg element.  The
+      value is pixels (`px`).  The default is 10.
+
+      @property size
+      @type {Number}
+      @default 10
+    */
+	size: 10,
+
+    /**
+      @property className
+      @type {Array}
+      @default ['svg-triangle']
+      @private
+    */
+    classNames: ['svg-triangle'],
+
+    /**
+      @property attributeBindings
+      @type {Array}
+      @default ['style']
+      @private
+    */
+    attributeBindings: ['style'],
+
+    /**
+      This is a computed property.  It sets the height and width of the svg element.
       @property style
       @type {String}
+      @private
     */
     style: Ember.computed('size', function() {
         var size = this.get('size');
         return Ember.String.htmlSafe('width:' + size + 'px; height:' + size + 'px;');
     }),
 
-    /*
+    /**
       @property points
       @type {String}
+      @private
     */
     points: Ember.computed('direction', 'size', function() {
         var points,
@@ -56,5 +100,5 @@ export default Ember.Component.extend({
 		});
 
 		return points.join(' ');
-    }),
+    })
 });
