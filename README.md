@@ -1,6 +1,10 @@
 # Ember-svg-shapes
 
-This README outlines the details of collaborating on this Ember addon.
+Ember-svg-shapes provides some basic shapes in the form of svg images, wrapped in ember components.
+
+## Available shapes
+
+* svg-triangle
 
 ## Installation
 
