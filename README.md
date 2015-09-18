@@ -49,3 +49,7 @@ You need to add/modify the content security policy directive.  In the `config/en
     ENV.contentSecurityPolicy = {
       'style-src': "'self' 'unsafe-inline'"
     }
+
+### TODO
+
+* add more shapes
