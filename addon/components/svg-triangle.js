@@ -17,7 +17,7 @@ export default Ember.Component.extend({
     */
     style: Ember.computed('size', function() {
         var size = this.get('size');
-		return ('width:' + size + 'px; height:' + size + 'px;').htmlSafe();
+        return Ember.String.htmlSafe('width:' + size + 'px; height:' + size + 'px;');
     }),
 
     /*
