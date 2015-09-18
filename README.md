@@ -6,7 +6,7 @@ Ember-svg-shapes provides some basic shapes in the form of svg images, wrapped i
 
 * svg-triangle
 
-    {{svg-triangle direction="left"}}
+    {{svg-triangle direction="left" size="12"}}
 
 ## Installation
 
