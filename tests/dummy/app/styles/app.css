@@ -1,0 +1,9 @@
+.svg-triangle.green {
+    fill: rgb(152, 208, 46);
+}
+.svg-triangle.red {
+    fill: rgb(255, 0, 0);
+}
+.svg-triangle.blue {
+    fill: rgb(0, 100, 255);
+}
