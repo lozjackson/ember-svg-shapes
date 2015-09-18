@@ -70,9 +70,10 @@ export default Ember.Component.extend({
     */
     points: Ember.computed('direction', 'size', function() {
         var points,
-			size = parseInt(this.get('size'));
+			size = parseInt(this.get('size')),
+            direction = this.get('direction');
 
-		switch (this.get('direction'))
+		switch (direction)
 		{
 			case 'up':
 			case 'u':
