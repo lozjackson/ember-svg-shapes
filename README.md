@@ -12,9 +12,15 @@ Ember-svg-shapes provides some basic shapes in the form of svg images, wrapped i
 
 Add css class names to the component and style as you would normally do with an svg element.
 
+    //css
     .svg-triangle.green {
         fill: rgb(152, 208, 46);
     }
+
+    //hbs
+    {{svg-triangle class="green"}}
+
+The class name `svg-triangle` is already added to the svg element.
 
 ## Installation
 
