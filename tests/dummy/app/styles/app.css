@@ -7,3 +7,7 @@
 .blue {
     fill: rgb(0, 100, 255);
 }
+
+input.rotate-star {
+    width: 300px;
+}
