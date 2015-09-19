@@ -20,10 +20,15 @@
 {{svg-triangle direction="right" size="100" class="green"}}
 
 <h3>svg-star</h3>
-
-{{svg-star size="100" class="blue"}}
-{{svg-star size="100" class="blue" innerPoints="1.4"}}
-{{svg-star size="100" class="red" starPoints="7" innerPoints="1.4"}}
+<div>
+    Rotate: {{input type="range" value=rotateStar}} {{_rotateStar}}
+</div>
+<div>
+    {{svg-star size="200" rotate=_rotateStar fill="blue"}}
+    {{svg-star size="100" rotate=_rotateStar class="blue"}}
+    {{svg-star size="100" rotate=_rotateStar class="blue" innerPoints="1.4"}}
+    {{svg-star size="100" rotate=_rotateStar class="red" starPoints="7" innerPoints="1.4"}}
+</div>
 
 
 {{outlet}}

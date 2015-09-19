@@ -51,12 +51,19 @@ export default Ember.Component.extend( SvgMixin, {
       @readonly
       @private
     */
-    transform: Ember.computed('rotate', function() {
-        var rotate = this.get('rotate');
+    transform: Ember.computed( 'rotate', 'size', function() {
+        var rotate = this.get('rotate'),
+            size = this.get('size'),
+            center;
+
         if (!rotate || isNaN(rotate)) {
             rotate = 0;
         }
-        return 'rotate(' + rotate + ', 50, 50)';
+
+        Ember.assert('`size` must be a number greater than zero', !isNaN(size) && size > 0);
+
+        center = size / 2;
+        return 'rotate(' + rotate + ', ' + center + ', ' + center + ')';
     }),
 
     /**
@@ -65,9 +72,11 @@ export default Ember.Component.extend( SvgMixin, {
       @private
     */
     points: Ember.computed('direction', 'size', function() {
-        var points,
-			size = parseInt(this.get('size')),
+        var points = [],
+			size = this.get('size'),
             direction = this.get('direction');
+
+            Ember.assert('`size` must be a number greater than zero', !isNaN(size) && size > 0);
 
 		switch (direction)
 		{
