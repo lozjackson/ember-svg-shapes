@@ -1,24 +1,18 @@
 /**
-  @module svg-shapes
+  @module ember-svg-shapes
 */
 import Ember from 'ember';
+import SvgMixin from 'ember-svg-shapes/mixins/svg';
 import layout from '../templates/components/svg-triangle';
 
 /**
   @class SvgTriangleComponent
   @namespace SvgShapes
+  @uses SvgShapes.SvgMixin
 */
-export default Ember.Component.extend({
+export default Ember.Component.extend( SvgMixin, {
 
     layout: layout,
-
-    /**
-      @property tagName
-      @type {String}
-      @private
-      @default 'svg'
-    */
-    tagName: 'svg',
 
     /**
       @property direction
@@ -43,25 +37,6 @@ export default Ember.Component.extend({
       @private
     */
     classNames: ['svg-triangle'],
-
-    /**
-      @property attributeBindings
-      @type {Array}
-      @default ['style']
-      @private
-    */
-    attributeBindings: ['style'],
-
-    /**
-      This is a computed property.  It sets the height and width of the svg element.
-      @property style
-      @type {String}
-      @private
-    */
-    style: Ember.computed('size', function() {
-        var size = this.get('size');
-        return Ember.String.htmlSafe('width:' + size + 'px; height:' + size + 'px;');
-    }),
 
     /**
       @property points

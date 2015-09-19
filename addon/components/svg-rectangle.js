@@ -1,17 +1,18 @@
+/**
+  @module ember-svg-shapes
+*/
 import Ember from 'ember';
+import SvgMixin from 'ember-svg-shapes/mixins/svg';
 import layout from '../templates/components/svg-rectangle';
 
-export default Ember.Component.extend({
+/**
+  @class SvgRectangleComponent
+  @namespace SvgShapes
+  @uses SvgShapes.SvgMixin
+*/
+export default Ember.Component.extend( SvgMixin, {
 
     layout: layout,
-
-    /**
-      @property tagName
-      @type {String}
-      @private
-      @default 'svg'
-    */
-    tagName: 'svg',
 
     /**
       @property className
@@ -20,33 +21,6 @@ export default Ember.Component.extend({
       @private
     */
     classNames: ['svg-rectangle'],
-
-    /**
-      @property attributeBindings
-      @type {Array}
-      @default ['style']
-      @private
-    */
-    attributeBindings: ['style'],
-
-    /**
-      @property stroke
-      @type {String}
-    */
-    stroke: '',
-
-    /**
-      @property strokeWidth
-      @type {Number}
-      @default 0
-    */
-    strokeWidth: 0,
-
-    /**
-      @property fill
-      @type {String}
-    */
-    fill: '',
 
     /**
       @property radiusX
