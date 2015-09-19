@@ -17,7 +17,7 @@ export default Ember.Component.extend( SvgMixin, {
     /**
       @property className
       @type {Array}
-      @default ['svg-circle']
+      @default ['svg-rectangle']
       @private
     */
     classNames: ['svg-rectangle'],
@@ -51,7 +51,7 @@ export default Ember.Component.extend( SvgMixin, {
     width: 10,
 
     /**
-      @property rectHeight
+      @property _height
       @type {Number}
       @readonly
       @private
