@@ -60,7 +60,7 @@ export default Ember.Component.extend({
     /**
       @property className
       @type {Array}
-      @default ['svg-triangle']
+      @default ['svg-star']
       @private
     */
     classNames: ['svg-star'],
