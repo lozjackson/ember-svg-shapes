@@ -31,12 +31,33 @@ export default Ember.Component.extend( SvgMixin, {
 	size: 10,
 
     /**
+      @property rotate
+      @type {Number}
+      @default 0
+    */
+    rotate: 0,
+
+    /**
       @property className
       @type {Array}
       @default ['svg-triangle']
       @private
     */
     classNames: ['svg-triangle'],
+
+    /**
+      @property transform
+      @type {String}
+      @readonly
+      @private
+    */
+    transform: Ember.computed('rotate', function() {
+        var rotate = this.get('rotate');
+        if (!rotate || isNaN(rotate)) {
+            rotate = 0;
+        }
+        return 'rotate(' + rotate + ', 50, 50)';
+    }),
 
     /**
       @property points
