@@ -8,6 +8,10 @@ Ember-svg-shapes provides some basic shapes in the form of svg images, wrapped i
 
     {{svg-triangle direction="left" size="12"}}
 
+* svg-star
+
+    {{svg-star rotate="45" size="20"}}
+
 ## Styling
 
 Add css class names to the component and style as you would normally do with an svg element.
