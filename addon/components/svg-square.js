@@ -3,10 +3,10 @@
 */
 import Ember from 'ember';
 import SvgMixin from 'ember-svg-shapes/mixins/svg';
-import layout from '../templates/components/svg-rectangle';
+import layout from '../templates/components/svg-square';
 
 /**
-  @class SvgRectangleComponent
+  @class SvgSquareComponent
   @namespace SvgShapes
   @uses SvgShapes.SvgMixin
 */
@@ -17,10 +17,10 @@ export default Ember.Component.extend( SvgMixin, {
     /**
       @property className
       @type {Array}
-      @default ['svg-rectangle']
+      @default ['svg-square']
       @private
     */
-    classNames: ['svg-rectangle'],
+    classNames: ['svg-square'],
 
     /**
       @property radiusX
@@ -37,18 +37,11 @@ export default Ember.Component.extend( SvgMixin, {
     radiusY: 0,
 
     /**
-      @property height
+      @property size
       @type {Number}
       @default 10
     */
-    height: 10,
-
-    /**
-      @property width
-      @type {Number}
-      @default 10
-    */
-    width: 10,
+    size: 10,
 
     /**
       @property _height
@@ -56,10 +49,10 @@ export default Ember.Component.extend( SvgMixin, {
       @readonly
       @private
     */
-    _height: Ember.computed('height', 'strokeWidth', function() {
-        var height = this.get('height'),
+    _height: Ember.computed('size', 'strokeWidth', function() {
+        var size= this.get('size'),
             strokeWidth = this.get('strokeWidth');
-        return height - strokeWidth;
+        return size - strokeWidth;
     }),
 
     /**
@@ -68,11 +61,7 @@ export default Ember.Component.extend( SvgMixin, {
       @readonly
       @private
     */
-    _width: Ember.computed('width', 'strokeWidth', function() {
-        var width = this.get('width'),
-            strokeWidth = this.get('strokeWidth');
-        return width - strokeWidth;
-    }),
+    _width: Ember.computed.alias('_height'),
 
     /**
       @property left
@@ -91,17 +80,5 @@ export default Ember.Component.extend( SvgMixin, {
       @readonly
       @private
     */
-    top: Ember.computed.alias('left'),
-
-    /**
-      This is a computed property.  It sets the height and width of the svg element.
-      @property style
-      @type {String}
-      @private
-    */
-    style: Ember.computed('height', 'width', function() {
-        var height = this.get('height'),
-            width = this.get('width');
-        return Ember.String.htmlSafe('height:' + height + 'px; width:' + width + 'px;');
-    })
+    top: Ember.computed.alias('left')
 });

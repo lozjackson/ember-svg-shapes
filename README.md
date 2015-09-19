@@ -4,17 +4,27 @@ Ember-svg-shapes provides some basic shapes in the form of svg images, wrapped i
 
 ## Available shapes
 
-* svg-triangle
-
-    {{svg-triangle direction="left" size="12"}}
-
 * svg-circle
 
     {{svg-circle size="30"}}
 
+* svg-square
+
+    {{svg-square size="30"}}
+
+* svg-rectangle
+
+    {{svg-rectangle height="20" width="30"}}
+
+* svg-triangle
+
+    {{svg-triangle direction="right" size="15"}}
+
 * svg-star
 
-    {{svg-star rotate="45" size="20"}}
+    {{svg-star rotate="45" size="50"}}
+
+
 
 ## Styling
 
@@ -28,7 +38,10 @@ Add css class names to the component and style as you would normally do with an 
     //hbs
     {{svg-triangle class="green"}}
 
-The class name `svg-triangle` is already added to the svg element.
+The class name `svg-triangle` is already added to the svg element of an svg-triangle
+component.
+
+
 
 ## Installation
 
@@ -63,7 +76,3 @@ You need to add/modify the content security policy directive.  In the `config/en
     ENV.contentSecurityPolicy = {
       'style-src': "'self' 'unsafe-inline'"
     }
-
-### TODO
-
-* add more shapes

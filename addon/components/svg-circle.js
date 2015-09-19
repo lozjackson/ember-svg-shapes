@@ -1,16 +1,18 @@
+/**
+  @module ember-svg-shapes
+*/
 import Ember from 'ember';
+import SvgMixin from 'ember-svg-shapes/mixins/svg';
 import layout from '../templates/components/svg-circle';
 
-export default Ember.Component.extend({
-    layout: layout,
+/**
+  @class SvgCircleComponent
+  @namespace SvgShapes
+  @uses SvgShapes.SvgMixin
+*/
+export default Ember.Component.extend( SvgMixin, {
 
-    /**
-      @property tagName
-      @type {String}
-      @private
-      @default 'svg'
-    */
-    tagName: 'svg',
+    layout: layout,
 
     /**
       @property className
@@ -21,25 +23,6 @@ export default Ember.Component.extend({
     classNames: ['svg-circle'],
 
     /**
-      @property attributeBindings
-      @type {Array}
-      @default ['style']
-      @private
-    */
-    attributeBindings: ['style'],
-
-    /**
-      This is a computed property.  It sets the height and width of the svg element.
-      @property style
-      @type {String}
-      @private
-    */
-    style: Ember.computed('size', function() {
-        var size = this.get('size');
-        return Ember.String.htmlSafe('width:' + size + 'px; height:' + size + 'px;');
-    }),
-
-    /**
       This value is used to set the height and width of the svg element.  The
       value is pixels (`px`).  The default is 10.
 
@@ -48,25 +31,6 @@ export default Ember.Component.extend({
       @default 10
     */
 	size: 10,
-
-    /**
-      @property stroke
-      @type {String}
-    */
-    stroke: '',
-
-    /**
-      @property strokeWidth
-      @type {Number}
-      @default 0
-    */
-    strokeWidth: 0,
-
-    /**
-      @property fill
-      @type {String}
-    */
-    fill: '',
 
     /**
       @property center
