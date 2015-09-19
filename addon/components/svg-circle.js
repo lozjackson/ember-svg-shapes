@@ -40,12 +40,6 @@ export default Ember.Component.extend({
     }),
 
     /**
-      @property direction
-      @type {String}
-    */
-	direction: null,
-
-    /**
       This value is used to set the height and width of the svg element.  The
       value is pixels (`px`).  The default is 10.
 

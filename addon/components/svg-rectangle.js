@@ -1,0 +1,133 @@
+import Ember from 'ember';
+import layout from '../templates/components/svg-rectangle';
+
+export default Ember.Component.extend({
+
+    layout: layout,
+
+    /**
+      @property tagName
+      @type {String}
+      @private
+      @default 'svg'
+    */
+    tagName: 'svg',
+
+    /**
+      @property className
+      @type {Array}
+      @default ['svg-circle']
+      @private
+    */
+    classNames: ['svg-rectangle'],
+
+    /**
+      @property attributeBindings
+      @type {Array}
+      @default ['style']
+      @private
+    */
+    attributeBindings: ['style'],
+
+    /**
+      @property stroke
+      @type {String}
+    */
+    stroke: '',
+
+    /**
+      @property strokeWidth
+      @type {Number}
+      @default 0
+    */
+    strokeWidth: 0,
+
+    /**
+      @property fill
+      @type {String}
+    */
+    fill: '',
+
+    /**
+      @property radiusX
+      @type {Number}
+      @default 0
+    */
+    radiusX: 0,
+
+    /**
+      @property radiusX
+      @type {Number}
+      @default 0
+    */
+    radiusY: 0,
+
+    /**
+      @property height
+      @type {Number}
+      @default 10
+    */
+    height: 10,
+
+    /**
+      @property width
+      @type {Number}
+      @default 10
+    */
+    width: 10,
+
+    /**
+      @property rectHeight
+      @type {Number}
+      @readonly
+      @private
+    */
+    _height: Ember.computed('height', 'strokeWidth', function() {
+        var height = this.get('height'),
+            strokeWidth = this.get('strokeWidth');
+        return height - strokeWidth;
+    }),
+
+    /**
+      @property _width
+      @type {Number}
+      @readonly
+      @private
+    */
+    _width: Ember.computed('width', 'strokeWidth', function() {
+        var width = this.get('width'),
+            strokeWidth = this.get('strokeWidth');
+        return width - strokeWidth;
+    }),
+
+    /**
+      @property left
+      @type {Number}
+      @readonly
+      @private
+    */
+    left: Ember.computed('strokeWidth', function() {
+        var strokeWidth = this.get('strokeWidth');
+        return strokeWidth / 2;
+    }),
+
+    /**
+      @property top
+      @type {Number}
+      @readonly
+      @private
+    */
+    top: Ember.computed.alias('left'),
+
+    /**
+      This is a computed property.  It sets the height and width of the svg element.
+      @property style
+      @type {String}
+      @private
+    */
+    style: Ember.computed('height', 'width', function() {
+        var height = this.get('height'),
+            width = this.get('width');
+        return Ember.String.htmlSafe('height:' + height + 'px; width:' + width + 'px;');
+    })
+});
