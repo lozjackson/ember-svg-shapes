@@ -30,7 +30,7 @@ export default Ember.Component.extend( SvgMixin, {
     radiusX: 0,
 
     /**
-      @property radiusX
+      @property radiusY
       @type {Number}
       @default 0
     */
