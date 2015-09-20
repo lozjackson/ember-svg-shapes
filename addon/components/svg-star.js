@@ -3,14 +3,16 @@
 */
 import Ember from 'ember';
 import SvgMixin from 'ember-svg-shapes/mixins/svg';
+import PolygonMixin from 'ember-svg-shapes/mixins/polygon';
 import layout from '../templates/components/svg-star';
 
 /**
   @class SvgStarComponent
-  @namespace SvgShapes
-  @uses SvgShapes.SvgMixin
+  @namespace SvgShapes.Components
+  @uses SvgShapes.Mixins.SvgMixin
+  @uses SvgShapes.Mixins.PolygonMixin
 */
-export default Ember.Component.extend( SvgMixin, {
+export default Ember.Component.extend( SvgMixin, PolygonMixin, {
 
     layout: layout,
 
@@ -52,33 +54,14 @@ export default Ember.Component.extend( SvgMixin, {
     innerPoints: 1,
 
     /**
+      This is an array of class names to be added to the svg element.
+
       @property className
       @type {Array}
       @default ['svg-star']
       @private
     */
     classNames: ['svg-star'],
-
-    /**
-      @property transform
-      @type {String}
-      @readonly
-      @private
-    */
-    transform: Ember.computed( 'rotate', 'size', function() {
-        var rotate = this.get('rotate'),
-            size = this.get('size'),
-            center;
-
-        if (!rotate || isNaN(rotate)) {
-            rotate = 0;
-        }
-
-        Ember.assert('`size` must be a number greater than zero', !isNaN(size) && size > 0);
-
-        center = size / 2;
-        return 'rotate(' + rotate + ', ' + center + ', ' + center + ')';
-    }),
 
     /**
       @property points

@@ -7,14 +7,16 @@ import layout from '../templates/components/svg-circle';
 
 /**
   @class SvgCircleComponent
-  @namespace SvgShapes
-  @uses SvgShapes.SvgMixin
+  @namespace SvgShapes.Components
+  @uses SvgShapes.Mixins.SvgMixin
 */
 export default Ember.Component.extend( SvgMixin, {
 
     layout: layout,
 
     /**
+      This is an array of class names to be added to the svg element.
+
       @property className
       @type {Array}
       @default ['svg-circle']
@@ -33,6 +35,9 @@ export default Ember.Component.extend( SvgMixin, {
 	size: 10,
 
     /**
+      This is a computed property that sets the center of the circle to the center
+      of the svg element.
+
       @property center
       @type {Number}
       @private
@@ -44,6 +49,8 @@ export default Ember.Component.extend( SvgMixin, {
     }),
 
     /**
+      This is a computed property that sets the radius of the circle.
+
       @property radius
       @type {Number}
       @readonly
