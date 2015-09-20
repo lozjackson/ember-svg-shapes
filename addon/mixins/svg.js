@@ -5,7 +5,7 @@ import Ember from 'ember';
 
 /**
   @class SvgMixin
-  @namespace SvgShapes
+  @namespace SvgShapes.Mixins
 */
 export default Ember.Mixin.create({
 
@@ -37,12 +37,20 @@ export default Ember.Mixin.create({
     }),
 
     /**
+      The stroke color.  Use this with `strokeWidth` to set a border around the shape.
+
+        {{svg-triangle stroke="blue" strokeWidth="2"}}
+
       @property stroke
       @type {String}
     */
     stroke: '',
 
     /**
+      The stroke width.    Use this with `stroke` to set a border around the shape.
+
+        {{svg-triangle strokeWidth="2" stroke="blue"}}
+
       @property strokeWidth
       @type {Number}
       @default 0
@@ -50,6 +58,10 @@ export default Ember.Mixin.create({
     strokeWidth: 0,
 
     /**
+      The fill color.
+
+            {{svg-triangle fill="blue"}}
+
       @property fill
       @type {String}
     */
