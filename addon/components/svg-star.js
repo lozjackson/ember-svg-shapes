@@ -69,7 +69,7 @@ export default Ember.Component.extend( SvgMixin, PolygonMixin, {
       @readonly
       @private
     */
-    points: Ember.computed( 'size', 'starPoints', function() {
+    points: Ember.computed( 'size', 'starPoints', 'innerPoints', function() {
 
         var points = [], r, x, y, center,
 			size = this.get('size'),
@@ -81,7 +81,7 @@ export default Ember.Component.extend( SvgMixin, PolygonMixin, {
 
         center = size / 2;
 
-        if (isNaN(innerPoints) || innerPoints < 0.1 || innerPoints > 1.9)
+        if (isNaN(innerPoints) || innerPoints <= 0 || innerPoints >= 2)
         {
             innerPoints = 1;
         }
