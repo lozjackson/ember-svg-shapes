@@ -19,10 +19,10 @@ export default Ember.Component.extend( SvgMixin, {
 
       @property className
       @type {Array}
-      @default ['svg-circle']
+      @default ['ember-svg-shapes', 'svg-circle']
       @private
     */
-    classNames: ['svg-circle'],
+    classNames: ['ember-svg-shapes', 'svg-circle'],
 
     /**
       This value is used to set the height and width of the svg element.  The

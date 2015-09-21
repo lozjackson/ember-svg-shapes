@@ -58,10 +58,10 @@ export default Ember.Component.extend( SvgMixin, PolygonMixin, {
 
       @property className
       @type {Array}
-      @default ['svg-star']
+      @default ['ember-svg-shapes', 'svg-star']
       @private
     */
-    classNames: ['svg-star'],
+    classNames: ['ember-svg-shapes', 'svg-star'],
 
     /**
       @property points
