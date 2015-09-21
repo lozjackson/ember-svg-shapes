@@ -5,7 +5,7 @@
 
 [BUGFIX] Fix svg-star component's `points` computed property to bind to the `innerPoints` property.
 
-[BUGFIX] Update the max and min values of the `innerPoints` property.
+[BUGFIX] Update the min and max values of the `innerPoints` property.
 
 Add `rect` and `polygon` mixins.
 
