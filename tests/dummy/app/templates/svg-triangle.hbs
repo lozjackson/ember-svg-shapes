@@ -1,0 +1,30 @@
+
+<h2>svg-triangle</h2>
+
+<div>
+    <div>
+        size: {{size}}
+    </div>
+    <div>
+        {{input type="range" value=size min="1" max="500" step="1" class="range-slider"}}
+    </div>
+</div>
+<div>
+    <div>
+        strokeWidth: {{strokeWidth}}
+    </div>
+    <div>
+        {{input type="range" value=strokeWidth min="0" max="100" step="1" class="range-slider"}}
+    </div>
+</div>
+<div>
+    <div>
+        rotate: {{rotate}}
+    </div>
+    <div>
+        {{input type="range" value=rotate min="-360" max="360" step="0.1" class="range-slider"}}
+    </div>
+</div>
+<div align="center">
+    {{svg-triangle direction="up" rotate=rotate size=size strokeWidth=strokeWidth class="green"}}
+</div>

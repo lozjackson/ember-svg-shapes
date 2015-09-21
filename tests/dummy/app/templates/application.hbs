@@ -1,56 +1,9 @@
 <h2 id="title">ember-svg-shapes</h2>
 
-<h3>svg-circle</h3>
-
-{{svg-circle size="100" fill="red"}}
-
-<h3>svg-square</h3>
-
-{{svg-square size="100" fill="purple"}}
-{{svg-square size="120" fill="orange" radiusX="20" radiusY="20"  strokeWidth="5"}}
-
-
-<h3>svg-rectangle</h3>
-
-{{svg-rectangle height="100" width="70" fill="red"}}
-{{svg-rectangle height="80" width="300" fill="green" radiusX="20" radiusY="20"}}
-
-<h3>svg-triangle</h3>
-
-{{svg-triangle direction="right" size="100" class="green"}}
-{{svg-triangle direction="right" size="100" strokeWidth="10" class="green"}}
-
-<h3>svg-star</h3>
-<div>
-    <div>
-        rotate: {{rotateStar}}
-    </div>
-    <div>
-        {{input type="range" value=rotateStar min="-360" max="360" step="0.1" class="rotate-star"}}
-    </div>
-</div>
-<div>
-    <div>
-        starPoints: {{starPoints}}
-    </div>
-    <div>
-        {{input type="range" value=starPoints min="3" max="100" step="1" class="rotate-star"}}
-    </div>
-</div>
-<div>
-    <div>
-        innerPoints: {{starInnerPoints}}
-    </div>
-    <div>
-        {{input type="range" value=starInnerPoints min="0.01" max="1.99" step="0.01" class="rotate-star"}}
-    </div>
-</div>
-<div>
-    {{svg-star size="200" rotate=rotateStar fill="blue" starPoints=starPoints innerPoints=starInnerPoints }}
-    {{svg-star size="200" stroke="purple" strokeWidth="5" class="blue"}}
-    {{svg-star size="100" class="blue" innerPoints="1.4"}}
-    {{svg-star size="150" class="red" starPoints="7" innerPoints="1.4"}}
-</div>
-
+<ul>
+    <li>{{#link-to 'index'}}index{{/link-to}}</li>
+    <li>{{#link-to 'svg-triangle'}}svg-triangle{{/link-to}}</li>
+    <li>{{#link-to 'svg-star'}}svg-star{{/link-to}}</li>
+</ul>
 
 {{outlet}}
