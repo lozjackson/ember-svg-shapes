@@ -1,5 +1,5 @@
 
-* [BUGFIX] Add `viewBox` computed property to polygon mixin to prevent the polygon's edges becoming clipped with `strokeWidth` settings greater than 0. Fixes issue #1
+* [BUGFIX] Set css overflow to `visible`. Fixes issue #1
 
 * [FEATURE] Make the `stroke` property default to 'black'.
 
