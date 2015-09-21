@@ -43,8 +43,9 @@ export default Ember.Mixin.create({
 
       @property stroke
       @type {String}
+      @default 'black'
     */
-    stroke: '',
+    stroke: 'black',
 
     /**
       The stroke width.    Use this with `stroke` to set a border around the shape.
