@@ -7,6 +7,8 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
     this.route('svg-circle');
+    this.route('svg-square');
+    this.route('svg-rectangle');
     this.route('svg-triangle');
     this.route('svg-star');
 });
