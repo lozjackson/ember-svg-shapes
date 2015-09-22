@@ -25,20 +25,6 @@ export default Ember.Component.extend( SvgMixin, {
     classNames: ['ember-svg-shapes', 'svg-circle'],
 
     /**
-      This is a computed property that sets the center of the circle to the center
-      of the svg element.
-
-      @property center
-      @type {Number}
-      @private
-      @readonly
-    */
-    center: Ember.computed('size', function() {
-        var size = this.get('size');
-        return size / 2;
-    }),
-
-    /**
       This is a computed property that sets the radius of the circle.
 
       @property radius
@@ -46,9 +32,22 @@ export default Ember.Component.extend( SvgMixin, {
       @readonly
       @private
     */
-    radius: Ember.computed('size', 'strokeWidth', function() {
+    radius: Ember.computed('size', function() {
         var size = this.get('size'),
-            strokeWidth = this.get('strokeWidth');
-        return size / 2 - (strokeWidth / 2);
-    })
+            radius = size / 2;
+
+        Ember.assert('`radius` must be a number greater than zero', !isNaN(radius) && radius > 0);
+
+        return radius;
+    }),
+
+    /**
+      This is an alias of `radius` and is used to set the center of the svg element.
+
+      @property center
+      @type {Number}
+      @private
+      @readonly
+    */
+    center: Ember.computed.alias('radius')
 });
