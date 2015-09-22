@@ -81,6 +81,8 @@ component.
 
 For an interactive demo, clone this repository, `bower install`, `npm install`, then run `ember server` and visit `localhost:4200` in your browser.  You will see the available shapes and you can play with the parameters.
 
+Alternatively, visit `http://lozjackson.com/ember-svg-shapes/`.
+
 
 
 ## Installation
