@@ -6,25 +6,61 @@ Ember-svg-shapes provides some basic shapes in the form of svg images, wrapped i
 
 * svg-circle
 
-    {{svg-circle size="30"}}
+    //hbs
+    {{svg-circle
+        size="10"
+        fill="red"
+        stroke="black"
+        strokeWidth="1"
+        rotate="45" }}
 
 * svg-square
 
-    {{svg-square size="30"}}
+    //hbs
+    {{svg-square
+        size="10"
+        fill="red"
+        stroke="black"
+        strokeWidth="1"
+        rotate="45"
+        radiusX="5"
+        radiusY="10"}}
 
 * svg-rectangle
 
-    {{svg-rectangle height="20" width="30"}}
+    {{svg-rectangle
+        size="1"
+        fill="red"
+        stroke="black"
+        strokeWidth="2"
+        rotate="45"
+        height="20"
+        width="30"
+        radiusX="5"
+        radiusY="10"}}
 
 * svg-triangle
 
-    {{svg-triangle direction="right" size="15"}}
+    {{svg-triangle
+        size="10"
+        fill="red"
+        stroke="black"
+        strokeWidth="1"
+        rotate="180"
+        direction="right"}}
 
 * svg-star
 
-    {{svg-star rotate="45" size="50"}}
+    {{svg-star
+        size="50"
+        fill="red"
+        stroke="black"
+        strokeWidth="2"
+        rotate="45"
+        starPoints="5"
+        innerPoints="1.4"}}
 
-
+All the parameters are optional.
 
 ## Styling
 
@@ -40,6 +76,10 @@ Add css class names to the component and style as you would normally do with an 
 
 The class name `svg-triangle` is already added to the svg element of an svg-triangle
 component.
+
+## Demo
+
+For an interactive demo, clone this repository, `bower install`, `npm install`, then run `ember server` and visit `localhost:4200` in your browser.  You will see the available shapes and you can play with the parameters.
 
 
 
