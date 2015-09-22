@@ -25,16 +25,6 @@ export default Ember.Component.extend( SvgMixin, {
     classNames: ['ember-svg-shapes', 'svg-circle'],
 
     /**
-      This value is used to set the height and width of the svg element.  The
-      value is pixels (`px`).  The default is 10.
-
-      @property size
-      @type {Number}
-      @default 10
-    */
-	size: 10,
-
-    /**
       This is a computed property that sets the center of the circle to the center
       of the svg element.
 
