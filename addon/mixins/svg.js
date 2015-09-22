@@ -26,17 +26,6 @@ export default Ember.Mixin.create({
     attributeBindings: ['style'],
 
     /**
-      This is a computed property.  It sets the height and width of the svg element.
-      @property style
-      @type {String}
-      @private
-    */
-    style: Ember.computed('size', function() {
-        var size = this.get('size');
-        return Ember.String.htmlSafe('width:' + size + 'px; height:' + size + 'px;');
-    }),
-
-    /**
       This value is used to set the height and width of the svg element.  The
       value is pixels (`px`).  The default is 10.
 
@@ -88,6 +77,19 @@ export default Ember.Mixin.create({
     rotate: 0,
 
     /**
+      This is a computed property.  It sets the height and width of the svg element.
+
+      @property style
+      @type {String}
+      @private
+    */
+    style: Ember.computed('size', function() {
+        var size = this.get('size');
+        Ember.assert('`size` must be a number greater than zero', !isNaN(size) && size > 0);
+        return Ember.String.htmlSafe(`height:${size}px; width:${size}px;`);
+    }),
+
+    /**
       This is a computed property.  It sets the `transform` attribute  of the
       polygon element.
 
@@ -108,6 +110,9 @@ export default Ember.Mixin.create({
         Ember.assert('`size` must be a number greater than zero', !isNaN(size) && size > 0);
 
         center = size / 2;
-        return 'rotate(' + rotate + ', ' + center + ', ' + center + ')';
+
+        Ember.assert('`center` must be a number greater than zero', !isNaN(center) && center > 0);
+
+        return `rotate(${rotate}, ${center}, ${center})`;
     })
 });
