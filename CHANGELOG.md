@@ -2,7 +2,7 @@
 
 * [FEATURE] Add the `transform` attribute to `svg-circle`, `svg-square` and `svg-rectangle` components.
 
-* [BUGFIX] Set css overflow to `visible`. Fixes issue #1
+* [BUGFIX] Set css `overflow` property to `visible`. Fixes issue #1
 
 * [FEATURE] Make the `stroke` property default to 'black'.
 
