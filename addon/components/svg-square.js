@@ -27,15 +27,20 @@ export default Ember.Component.extend( SvgMixin,  RectMixin, {
     classNames: ['ember-svg-shapes', 'svg-square'],
 
     /**
+      This is a computed property.  It sets the height of the square shape based
+      on the size of the svg image element.
+
       @property _height
       @type {Number}
       @readonly
       @private
     */
-    _height: Ember.computed('size', 'strokeWidth', function() {
-        var size= this.get('size'),
-            strokeWidth = this.get('strokeWidth');
-        return size - strokeWidth;
+    _height: Ember.computed('size', function() {
+        var size = this.get('size');
+
+        Ember.assert('`size` must be a number greater than zero', !isNaN(size) && size > 0);
+
+        return size;
     }),
 
     /**
