@@ -36,10 +36,14 @@ export default Ember.Mixin.create({
       @readonly
       @private
     */
-    _height: Ember.computed('height', 'strokeWidth', function() {
+    _height: Ember.computed('height', 'size', function() {
         var height = this.get('height'),
-            strokeWidth = this.get('strokeWidth');
-        return height - strokeWidth;
+            size = this.get('size');
+
+        Ember.assert('`height` must be a number greater than zero', !isNaN(height) && height > 0);
+        Ember.assert('`size` must be a number greater than zero', !isNaN(size) && size > 0);
+
+        return height * size;
     }),
 
     /**
@@ -51,33 +55,25 @@ export default Ember.Mixin.create({
       @readonly
       @private
     */
-    _width: Ember.computed('width', 'strokeWidth', function() {
+    _width: Ember.computed('width', 'size', function() {
         var width = this.get('width'),
-            strokeWidth = this.get('strokeWidth');
-        return width - strokeWidth;
+            size = this.get('size');
+
+        Ember.assert('`width` must be a number greater than zero', !isNaN(width) && width > 0);
+        Ember.assert('`size` must be a number greater than zero', !isNaN(size) && size > 0);
+
+        return width * size;
     }),
 
     /**
-      This is a computed property.  It sets the left coordinate of the rectangle
-      shape based on the stroke width.
-
       @property left
       @type {Number}
-      @readonly
-      @private
     */
-    left: Ember.computed('strokeWidth', function() {
-        var strokeWidth = this.get('strokeWidth');
-        return strokeWidth / 2;
-    }),
+    left: 0,
 
     /**
-      This is an alias of `left`.
-      
       @property top
       @type {Number}
-      @readonly
-      @private
     */
-    top: Ember.computed.alias('left')
+    top: 0
 });
