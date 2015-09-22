@@ -27,13 +27,6 @@ export default Ember.Component.extend( SvgMixin,  RectMixin, {
     classNames: ['ember-svg-shapes', 'svg-square'],
 
     /**
-      @property size
-      @type {Number}
-      @default 10
-    */
-    size: 10,
-
-    /**
       @property _height
       @type {Number}
       @readonly
