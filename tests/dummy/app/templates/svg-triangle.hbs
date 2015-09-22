@@ -3,6 +3,19 @@
 
 <div>
     <div>
+        direction: {{direction}}
+    </div>
+    <div>
+        <select id="direction" {{action 'changeDirection' on="change"}}>
+            <option value="up">Up</option>
+            <option value="down">Down</option>
+            <option value="left">Left</option>
+            <option value="right">Right</option>
+        </select>
+    </div>
+</div>
+<div>
+    <div>
         size: {{size}}
     </div>
     <div>
@@ -26,5 +39,5 @@
     </div>
 </div>
 <div align="center">
-    {{svg-triangle direction="up" rotate=rotate size=size strokeWidth=strokeWidth class="green"}}
+    {{svg-triangle direction=direction rotate=rotate size=size strokeWidth=strokeWidth class="green"}}
 </div>
