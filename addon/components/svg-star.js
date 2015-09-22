@@ -3,7 +3,6 @@
 */
 import Ember from 'ember';
 import SvgMixin from 'ember-svg-shapes/mixins/svg';
-import PolygonMixin from 'ember-svg-shapes/mixins/polygon';
 import layout from '../templates/components/svg-star';
 
 /**
@@ -12,19 +11,9 @@ import layout from '../templates/components/svg-star';
   @uses SvgShapes.Mixins.SvgMixin
   @uses SvgShapes.Mixins.PolygonMixin
 */
-export default Ember.Component.extend( SvgMixin, PolygonMixin, {
+export default Ember.Component.extend( SvgMixin, {
 
     layout: layout,
-
-    /**
-      This value is used to set the height and width of the svg element.  The
-      value is pixels (`px`).  The default is 10.
-
-      @property size
-      @type {Number}
-      @default 10
-    */
-	size: 10,
 
     /**
       @property rotate
