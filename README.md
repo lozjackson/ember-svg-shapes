@@ -6,7 +6,6 @@ Ember-svg-shapes provides some basic shapes in the form of svg images, wrapped i
 
 * svg-circle
 
-    //hbs
     {{svg-circle
         size="10"
         fill="red"
@@ -16,7 +15,6 @@ Ember-svg-shapes provides some basic shapes in the form of svg images, wrapped i
 
 * svg-square
 
-    //hbs
     {{svg-square
         size="10"
         fill="red"
