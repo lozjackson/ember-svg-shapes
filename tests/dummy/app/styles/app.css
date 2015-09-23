@@ -12,4 +12,5 @@ svg {
 }
 input.range-slider {
     width: 600px;
+    max-width: calc(100% - 10px);
 }
