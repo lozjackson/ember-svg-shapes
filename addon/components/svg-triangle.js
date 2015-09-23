@@ -7,8 +7,9 @@ import layout from '../templates/components/svg-triangle';
 
 /**
   @class SvgTriangleComponent
-  @namespace SvgShapes
-  @uses SvgShapes.SvgMixin
+  @namespace SvgShapes.Components
+  @uses SvgShapes.Mixins.SvgMixin
+  @uses SvgShapes.Mixins.PolygonMixin
 */
 export default Ember.Component.extend( SvgMixin, {
 
@@ -21,54 +22,19 @@ export default Ember.Component.extend( SvgMixin, {
 	direction: null,
 
     /**
-      This value is used to set the height and width of the svg element.  The
-      value is pixels (`px`).  The default is 10.
+      This is an array of class names to be added to the svg element.
 
-      @property size
-      @type {Number}
-      @default 10
-    */
-	size: 10,
-
-    /**
-      @property rotate
-      @type {Number}
-      @default 0
-    */
-    rotate: 0,
-
-    /**
       @property className
       @type {Array}
-      @default ['svg-triangle']
+      @default ['ember-svg-shapes', 'svg-triangle']
       @private
     */
-    classNames: ['svg-triangle'],
-
-    /**
-      @property transform
-      @type {String}
-      @readonly
-      @private
-    */
-    transform: Ember.computed( 'rotate', 'size', function() {
-        var rotate = this.get('rotate'),
-            size = this.get('size'),
-            center;
-
-        if (!rotate || isNaN(rotate)) {
-            rotate = 0;
-        }
-
-        Ember.assert('`size` must be a number greater than zero', !isNaN(size) && size > 0);
-
-        center = size / 2;
-        return 'rotate(' + rotate + ', ' + center + ', ' + center + ')';
-    }),
+    classNames: ['ember-svg-shapes', 'svg-triangle'],
 
     /**
       @property points
       @type {String}
+      @readonly
       @private
     */
     points: Ember.computed('direction', 'size', function() {

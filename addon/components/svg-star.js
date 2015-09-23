@@ -7,22 +7,13 @@ import layout from '../templates/components/svg-star';
 
 /**
   @class SvgStarComponent
-  @namespace SvgShapes
-  @uses SvgShapes.SvgMixin
+  @namespace SvgShapes.Components
+  @uses SvgShapes.Mixins.SvgMixin
+  @uses SvgShapes.Mixins.PolygonMixin
 */
 export default Ember.Component.extend( SvgMixin, {
 
     layout: layout,
-
-    /**
-      This value is used to set the height and width of the svg element.  The
-      value is pixels (`px`).  The default is 10.
-
-      @property size
-      @type {Number}
-      @default 10
-    */
-	size: 10,
 
     /**
       @property rotate
@@ -52,33 +43,14 @@ export default Ember.Component.extend( SvgMixin, {
     innerPoints: 1,
 
     /**
+      This is an array of class names to be added to the svg element.
+
       @property className
       @type {Array}
-      @default ['svg-star']
+      @default ['ember-svg-shapes', 'svg-star']
       @private
     */
-    classNames: ['svg-star'],
-
-    /**
-      @property transform
-      @type {String}
-      @readonly
-      @private
-    */
-    transform: Ember.computed( 'rotate', 'size', function() {
-        var rotate = this.get('rotate'),
-            size = this.get('size'),
-            center;
-
-        if (!rotate || isNaN(rotate)) {
-            rotate = 0;
-        }
-
-        Ember.assert('`size` must be a number greater than zero', !isNaN(size) && size > 0);
-
-        center = size / 2;
-        return 'rotate(' + rotate + ', ' + center + ', ' + center + ')';
-    }),
+    classNames: ['ember-svg-shapes', 'svg-star'],
 
     /**
       @property points
@@ -86,7 +58,7 @@ export default Ember.Component.extend( SvgMixin, {
       @readonly
       @private
     */
-    points: Ember.computed( 'size', 'starPoints', function() {
+    points: Ember.computed( 'size', 'starPoints', 'innerPoints', function() {
 
         var points = [], r, x, y, center,
 			size = this.get('size'),
@@ -98,7 +70,7 @@ export default Ember.Component.extend( SvgMixin, {
 
         center = size / 2;
 
-        if (isNaN(innerPoints) || innerPoints < 0.1 || innerPoints > 1.9)
+        if (isNaN(innerPoints) || innerPoints <= 0 || innerPoints >= 2)
         {
             innerPoints = 1;
         }

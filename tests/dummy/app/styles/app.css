@@ -1,3 +1,6 @@
+svg {
+    margin: 50px auto;
+}
 .green {
     fill: rgb(152, 208, 46);
 }
@@ -7,7 +10,7 @@
 .blue {
     fill: rgb(0, 100, 255);
 }
-
-input.rotate-star {
-    width: 300px;
+input.range-slider {
+    width: 600px;
+    max-width: calc(100% - 10px);
 }

@@ -7,51 +7,47 @@ import layout from '../templates/components/svg-circle';
 
 /**
   @class SvgCircleComponent
-  @namespace SvgShapes
-  @uses SvgShapes.SvgMixin
+  @namespace SvgShapes.Components
+  @uses SvgShapes.Mixins.SvgMixin
 */
 export default Ember.Component.extend( SvgMixin, {
 
     layout: layout,
 
     /**
+      This is an array of class names to be added to the svg element.
+
       @property className
       @type {Array}
-      @default ['svg-circle']
+      @default ['ember-svg-shapes', 'svg-circle']
       @private
     */
-    classNames: ['svg-circle'],
+    classNames: ['ember-svg-shapes', 'svg-circle'],
 
     /**
-      This value is used to set the height and width of the svg element.  The
-      value is pixels (`px`).  The default is 10.
+      This is a computed property that sets the radius of the circle.
 
-      @property size
-      @type {Number}
-      @default 10
-    */
-	size: 10,
-
-    /**
-      @property center
-      @type {Number}
-      @private
-      @readonly
-    */
-    center: Ember.computed('size', function() {
-        var size = this.get('size');
-        return size / 2;
-    }),
-
-    /**
       @property radius
       @type {Number}
       @readonly
       @private
     */
-    radius: Ember.computed('size', 'strokeWidth', function() {
+    radius: Ember.computed('size', function() {
         var size = this.get('size'),
-            strokeWidth = this.get('strokeWidth');
-        return size / 2 - (strokeWidth / 2);
-    })
+            radius = size / 2;
+
+        Ember.assert('`radius` must be a number greater than zero', !isNaN(radius) && radius > 0);
+
+        return radius;
+    }),
+
+    /**
+      This is an alias of `radius` and is used to set the center of the svg element.
+
+      @property center
+      @type {Number}
+      @private
+      @readonly
+    */
+    center: Ember.computed.alias('radius')
 });
