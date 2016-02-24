@@ -1,1 +1,0 @@
-export { default } from 'ember-svg-shapes/components/svg-rectangle';
