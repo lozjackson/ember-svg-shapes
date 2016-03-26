@@ -1,1 +1,4 @@
-<rect x={{left}} y={{top}} rx={{radiusX}} ry={{radiusY}} width={{_width}} height={{_height}} transform={{transform}} stroke={{stroke}} stroke-width={{strokeWidth}} fill={{fill}} />
+{{#if hasBlock}}
+  {{yield}}
+{{/if}}
+<rect x={{left}} y={{top}} rx={{radiusX}} ry={{radiusY}} width={{_width}} height={{_height}} transform={{transform}} stroke={{stroke}} stroke-width={{strokeWidth}} fill={{fill}} filter={{filterUrl}} />
