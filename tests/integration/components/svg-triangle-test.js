@@ -8,5 +8,5 @@ moduleForComponent('svg-triangle', 'Integration | Component | svg triangle', {
 test('it has correct class names', function(assert) {
   assert.expect(1);
   this.render(hbs`{{svg-triangle}}`);
-  assert.equal(this.$('.ember-svg-shapes.svg-triangle').length, 1);
+  assert.equal(this.$('svg.ember-svg-shapes.svg-triangle').length, 1);
 });

@@ -8,5 +8,5 @@ moduleForComponent('svg-square', 'Integration | Component | svg square', {
 test('it has correct class names', function(assert) {
   assert.expect(1);
   this.render(hbs`{{svg-square}}`);
-  assert.equal(this.$('.ember-svg-shapes.svg-square').length, 1);
+  assert.equal(this.$('svg.ember-svg-shapes.svg-square').length, 1);
 });

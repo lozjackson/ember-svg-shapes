@@ -8,5 +8,5 @@ moduleForComponent('svg-circle', 'Integration | Component | svg circle', {
 test('it has correct class names', function(assert) {
   assert.expect(1);
   this.render(hbs`{{svg-circle}}`);
-  assert.equal(this.$('.ember-svg-shapes.svg-circle').length, 1);
+  assert.equal(this.$('svg.ember-svg-shapes.svg-circle').length, 1);
 });
