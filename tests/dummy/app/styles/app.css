@@ -1,5 +1,8 @@
+body {
+  font-family: sans-serif;
+}
 svg {
-    margin: 50px auto;
+    margin: 50px 10px;
 }
 .green {
     fill: rgb(152, 208, 46);
