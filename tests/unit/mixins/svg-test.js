@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import SvgMixin from '../../../mixins/svg';
+import SvgMixin from 'ember-svg-shapes/mixins/svg';
 import { module, test } from 'qunit';
 
 module('Unit | Mixin | svg');

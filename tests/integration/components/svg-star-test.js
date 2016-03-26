@@ -5,22 +5,8 @@ moduleForComponent('svg-star', 'Integration | Component | svg star', {
   integration: true
 });
 
-test('it renders', function(assert) {
-  assert.expect(2);
-
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-
+test('it has correct class names', function(assert) {
+  assert.expect(1);
   this.render(hbs`{{svg-star}}`);
-
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#svg-star}}
-      template block text
-    {{/svg-star}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$('svg.ember-svg-shapes.svg-star').length, 1);
 });

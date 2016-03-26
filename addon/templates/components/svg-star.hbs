@@ -1,1 +1,4 @@
-<polygon points={{points}} transform={{transform}} stroke={{stroke}} stroke-width={{strokeWidth}} fill={{fill}} />
+{{#if hasBlock}}
+  {{yield}}
+{{/if}}
+<polygon points={{points}} transform={{transform}} stroke={{stroke}} stroke-width={{strokeWidth}} fill={{fill}} filter={{filterUrl}} />

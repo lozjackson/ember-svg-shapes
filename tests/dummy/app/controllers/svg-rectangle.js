@@ -2,17 +2,17 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 
-    size: 1,
+  size: 1,
 
-    height: 100,
+  height: 100,
 
-    width: 200,
+  width: 200,
 
-    strokeWidth: 10,
+  strokeWidth: 10,
 
-    rotate: 0,
+  rotate: 0,
 
-    radiusX: 0,
+  radiusX: 0,
 
-    radiusY: 0
+  radiusY: 0
 });

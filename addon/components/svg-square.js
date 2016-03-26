@@ -4,6 +4,7 @@
 import Ember from 'ember';
 import SvgMixin from 'ember-svg-shapes/mixins/svg';
 import RectMixin from 'ember-svg-shapes/mixins/rect';
+import FilterMixin from 'ember-svg-shapes/mixins/filter';
 import layout from '../templates/components/svg-square';
 
 /**
@@ -11,43 +12,42 @@ import layout from '../templates/components/svg-square';
   @namespace SvgShapes.Components
   @uses SvgShapes.Mixins.SvgMixin
   @uses SvgShapes.Mixins.RectMixin
+  @uses SvgShapes.Mixins.FilterMixin
 */
-export default Ember.Component.extend( SvgMixin,  RectMixin, {
+export default Ember.Component.extend(SvgMixin,  RectMixin, FilterMixin, {
 
-    layout: layout,
+  layout,
 
-    /**
-      This is an array of class names to be added to the svg element.
+  /**
+    This is an array of class names to be added to the svg element.
 
-      @property className
-      @type {Array}
-      @default ['ember-svg-shapes', 'svg-square']
-      @private
-    */
-    classNames: ['ember-svg-shapes', 'svg-square'],
+    @property className
+    @type {Array}
+    @default ['ember-svg-shapes', 'svg-square']
+    @private
+  */
+  classNames: ['ember-svg-shapes', 'svg-square'],
 
-    /**
-      This is a computed property.  It sets the height of the square shape based
-      on the size of the svg image element.
+  /**
+    This is a computed property.  It sets the height of the square shape based
+    on the size of the svg image element.
 
-      @property _height
-      @type {Number}
-      @readonly
-      @private
-    */
-    _height: Ember.computed('size', function() {
-        var size = this.get('size');
+    @property _height
+    @type {Number}
+    @readonly
+    @private
+  */
+  _height: Ember.computed('size', function() {
+    let size = this.get('size');
+    Ember.assert('`size` must be a number greater than zero', !isNaN(size) && size > 0);
+    return size;
+  }),
 
-        Ember.assert('`size` must be a number greater than zero', !isNaN(size) && size > 0);
-
-        return size;
-    }),
-
-    /**
-      @property _width
-      @type {Number}
-      @readonly
-      @private
-    */
-    _width: Ember.computed.alias('_height')
+  /**
+    @property _width
+    @type {Number}
+    @readonly
+    @private
+  */
+  _width: Ember.computed.alias('_height')
 });

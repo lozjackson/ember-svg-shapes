@@ -1,3 +1,16 @@
+### v0.1.0 2016-03-26
+
+* [FEATURE] Add `svg-filters` component.
+
+* [FEATURE] Add `filter-drop-shadow` component.
+
+* [FEATURE] Add `filter` mixin.
+
+* Update to Ember-cli 2.4.2
+
+
+
+
 ### v0.0.2 2015-09-23
 
 * [FEATURE] The `size` property of the `svg-rectangle` component can now be used to multiply the `height` and `width` values.
