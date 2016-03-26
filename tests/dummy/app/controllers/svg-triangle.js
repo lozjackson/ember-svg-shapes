@@ -6,7 +6,7 @@ export default Ember.Controller.extend({
 
   size: 200,
 
-  strokeWidth: 10,
+  strokeWidth: 0,
 
   rotate: 0,
 
