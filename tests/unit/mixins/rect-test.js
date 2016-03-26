@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import RectMixin from '../../../mixins/rect';
+import RectMixin from 'ember-svg-shapes/mixins/rect';
 import { module, test } from 'qunit';
 
 module('Unit | Mixin | rect');

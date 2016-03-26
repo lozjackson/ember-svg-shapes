@@ -5,22 +5,8 @@ moduleForComponent('svg-rectangle', 'Integration | Component | svg rectangle', {
   integration: true
 });
 
-test('it renders', function(assert) {
-  assert.expect(2);
-
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-
+test('it has correct class names', function(assert) {
+  assert.expect(1);
   this.render(hbs`{{svg-rectangle}}`);
-
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#svg-rectangle}}
-      template block text
-    {{/svg-rectangle}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$('.ember-svg-shapes.svg-rectangle').length, 1);
 });
