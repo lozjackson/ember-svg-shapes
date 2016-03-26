@@ -1,3 +1,9 @@
 svg.ember-svg-shapes {
     overflow: visible;
 }
+svg.svg-filters {
+  height: 0;
+  width: 0;
+  margin: 0;
+  padding: 0;
+}
