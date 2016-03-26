@@ -23,7 +23,7 @@ export default Ember.Mixin.create({
       @default ['style']
       @private
     */
-    attributeBindings: ['style'],
+    attributeBindings: ['style', 'viewBox', 'preserveAspectRatio'],
 
     /**
       This value is used to set the height and width of the svg element.  The
@@ -86,7 +86,23 @@ export default Ember.Mixin.create({
     style: Ember.computed('size', function() {
         var size = this.get('size');
         Ember.assert('`size` must be a number greater than zero', !isNaN(size) && size > 0);
-        return Ember.String.htmlSafe(`height:${size}px; width:${size}px;`);
+        return Ember.String.htmlSafe(`height:${size}; width:${size};`);
+    }),
+
+    //autoScale: true,
+
+    preserveAspectRatio: 'xMidYMid meet',
+
+    viewBox: Ember.computed( 'size', 'strokeWidth', function() {
+        var size = this.get('size');
+        Ember.assert('`size` must be a number greater than zero', !isNaN(size) && size > 0);
+
+        var strokeWidth = this.get('strokeWidth'),
+            offset = strokeWidth / 2,
+            x = offset * -1,
+            s = parseFloat(size) + parseFloat(offset * 2);
+
+        return `${x} ${x} ${s} ${s}`;
     }),
 
     /**
