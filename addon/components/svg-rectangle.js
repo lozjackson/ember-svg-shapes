@@ -8,6 +8,23 @@ import FilterMixin from 'ember-svg-shapes/mixins/filter';
 import layout from '../templates/components/svg-rectangle';
 
 /**
+
+  # SvgRectangleComponent
+
+  ```
+  {{svg-rectangle
+    size="number"
+    height="number"
+    width="number"
+    strokeWidth="number"
+    rotate="number"
+    radiusX="number"
+    radiusY="number"
+    fill="color"
+    filter="filter id"
+    class="class names"}}
+  ```
+
   @class SvgRectangleComponent
   @namespace SvgShapes.Components
   @uses SvgShapes.Mixins.SvgMixin

@@ -7,7 +7,24 @@ import RectMixin from 'ember-svg-shapes/mixins/rect';
 import FilterMixin from 'ember-svg-shapes/mixins/filter';
 import layout from '../templates/components/svg-square';
 
+
+
 /**
+
+  # SvgSquareComponent
+
+  ```
+  {{svg-square
+    size="number"
+    strokeWidth="number"
+    rotate="number of degrees"
+    radiusX="number"
+    radiusY="number"
+    fill="color"
+    filter="filter id"
+    class="class names"}}
+  ```
+
   @class SvgSquareComponent
   @namespace SvgShapes.Components
   @uses SvgShapes.Mixins.SvgMixin

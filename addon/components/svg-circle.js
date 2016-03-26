@@ -7,6 +7,17 @@ import FilterMixin from 'ember-svg-shapes/mixins/filter';
 import layout from '../templates/components/svg-circle';
 
 /**
+  # SvgCircleComponent
+
+  ```
+  {{svg-circle
+    size="number"
+    strokeWidth="number"
+    fill="color"
+    filter="filter id"
+    class="class names"}}
+  ```
+
   @class SvgCircleComponent
   @namespace SvgShapes.Components
   @uses SvgShapes.Mixins.SvgMixin

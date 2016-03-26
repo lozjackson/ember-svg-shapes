@@ -7,6 +7,19 @@ import FilterMixin from 'ember-svg-shapes/mixins/filter';
 import layout from '../templates/components/svg-star';
 
 /**
+  # SvgStarComponent
+
+  ```
+  {{svg-star
+    size="number"
+    strokeWidth="number"
+    rotate="number of degrees"
+    starPoints="number"
+    innerPoints="number"
+    filter="filter id"
+    class="class names"}}
+  ```
+
   @class SvgStarComponent
   @namespace SvgShapes.Components
   @uses SvgShapes.Mixins.SvgMixin

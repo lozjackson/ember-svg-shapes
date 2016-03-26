@@ -7,6 +7,18 @@ import FilterMixin from 'ember-svg-shapes/mixins/filter';
 import layout from '../templates/components/svg-triangle';
 
 /**
+  # SvgTriangleComponent
+
+  ```
+  {{svg-triangle
+    direction="left|right|up|down"
+    size="number"
+    strokeWidth="number"
+    rotate="number of degrees"
+    filter="filter id"
+    class="class names"}}
+  ```
+
   @class SvgTriangleComponent
   @namespace SvgShapes.Components
   @uses SvgShapes.Mixins.SvgMixin
