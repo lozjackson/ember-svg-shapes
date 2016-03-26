@@ -12,17 +12,17 @@ import layout from '../templates/components/svg-rectangle';
   @uses SvgShapes.Mixins.SvgMixin
   @uses SvgShapes.Mixins.RectMixin
 */
-export default Ember.Component.extend( SvgMixin, RectMixin, {
+export default Ember.Component.extend(SvgMixin, RectMixin, {
 
-    layout: layout,
+  layout,
 
-    /**
-      This is an array of class names to be added to the svg element.
+  /**
+    This is an array of class names to be added to the svg element.
 
-      @property className
-      @type {Array}
-      @default ['ember-svg-shapes', 'svg-rectangle']
-      @private
-    */
-    classNames: ['ember-svg-shapes', 'svg-rectangle']
+    @property className
+    @type {Array}
+    @default ['ember-svg-shapes', 'svg-rectangle']
+    @private
+  */
+  classNames: ['ember-svg-shapes', 'svg-rectangle']
 });
