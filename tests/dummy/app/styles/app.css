@@ -1,6 +1,7 @@
 svg {
     margin: 50px auto;
 }
+
 .green {
     fill: rgb(152, 208, 46);
 }
@@ -13,4 +14,35 @@ svg {
 input.range-slider {
     width: 600px;
     max-width: calc(100% - 10px);
+}
+pre {
+  padding: 10px;
+  border-radius: 2px;
+  background: #eaeaea;
+  box-shadow: inset 0px 1px 1px #888;
+  /*max-width: 800px;*/
+  overflow-x: auto;
+}
+p code {
+  background: #eaeaea;
+  border-radius: 2px;
+  padding: 2px 5px;
+}
+@media all and (min-width: 760px) {
+  nav {
+    margin-left: 8px;
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
+  section.content {
+    margin: 0;
+    margin-left: 200px;
+  }
+}
+@media all and (min-width:1160px) {
+  section.content {
+    max-width: 760px;
+    margin: 0 auto;
+  }
 }

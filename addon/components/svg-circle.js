@@ -3,14 +3,16 @@
 */
 import Ember from 'ember';
 import SvgMixin from 'ember-svg-shapes/mixins/svg';
+import FilterMixin from 'ember-svg-shapes/mixins/filter';
 import layout from '../templates/components/svg-circle';
 
 /**
   @class SvgCircleComponent
   @namespace SvgShapes.Components
   @uses SvgShapes.Mixins.SvgMixin
+  @uses SvgShapes.Mixins.FilterMixin
 */
-export default Ember.Component.extend(SvgMixin, {
+export default Ember.Component.extend(SvgMixin, FilterMixin, {
 
   layout,
 
