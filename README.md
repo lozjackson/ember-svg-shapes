@@ -94,8 +94,7 @@ Add css class names to the component and style as you would normally do with an 
 {{svg-triangle class="green"}}
 ```
 
-The class name `svg-triangle` is already added to the svg element of an svg-triangle
-component.
+The class name `svg-triangle` is already added to the `svg` element of an `SvgTriangleComponent`.
 
 
 
