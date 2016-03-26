@@ -1,0 +1,16 @@
+
+<p>You can apply a drop shadow filter using the <code>filter-drop-shadow</code> component.</p>
+
+<p>You can place the filter in the svg shape component's block:</p>
+
+<pre><code>&#123;&#123;#svg-triangle size="100" filter="inline-drop-shadow" class="green"&#125;&#125;
+  &#123;&#123;filter-drop-shadow id="inline-drop-shadow" dx="2" dx="4"&#125;&#125;
+&#123;&#123;/svg-triangle&#125;&#125;</code></pre>
+
+<p>You can also use an <code>{{link-to 'svg-filters' 'svg-filters'}}</code> component to hold a collection of filters.</p>
+
+<div align="center">
+  {{#svg-triangle size="100" filter="inline-drop-shadow" class="green"}}
+    {{filter-drop-shadow id="inline-drop-shadow" dx="2" dy="4"}}
+  {{/svg-triangle}}
+</div>
