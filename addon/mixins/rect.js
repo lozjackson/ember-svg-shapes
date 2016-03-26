@@ -124,6 +124,25 @@ export default Ember.Mixin.create({
         return Ember.String.htmlSafe(`height:${height}px; width:${width}px;`);
     }),
 
+    viewBox: Ember.computed( '_height', '_width', 'strokeWidth', function() {
+        var height = this.get('_height'),
+            width = this.get('_width');
+        Ember.assert('`_height` must be a number greater than zero', !isNaN(height) && height > 0);
+        Ember.assert('`_width` must be a number greater than zero', !isNaN(width) && width > 0);
+
+        var strokeWidth = this.get('strokeWidth'),
+            offset = strokeWidth / 2,
+            x = offset * -1,
+            h = parseFloat(height) + parseFloat(offset * 2),
+            w = parseFloat(width) + parseFloat(offset * 2);
+
+        x = 0;
+        h = parseFloat(height);
+        w = parseFloat(width);
+
+        return `${x} ${x} ${w} ${h}`;
+    }),
+
     /**
       This is a computed property.  It sets the `transform` attribute  of the
       polygon element.
