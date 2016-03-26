@@ -2,13 +2,22 @@
 
 Ember-svg-shapes provides some basic shapes in the form of svg images, wrapped in ember components.
 
+
+
+
 ## Demo
 
 http://lozjackson.github.io/ember-svg-shapes/
 
+
+
+
 ## Installation
 
 * `npm install ember-svg-shapes --save-dev`
+
+
+
 
 ## Available shapes
 
@@ -78,6 +87,9 @@ http://lozjackson.github.io/ember-svg-shapes/
 
 All the parameters are optional.
 
+
+
+
 ## Styling
 
 Add css class names to the component and style as you would normally do with an svg element.
@@ -93,8 +105,6 @@ Add css class names to the component and style as you would normally do with an 
 //hbs
 {{svg-triangle class="green"}}
 ```
-
-The class name `svg-triangle` is already added to the `svg` element of an `SvgTriangleComponent`.
 
 
 
