@@ -1,4 +1,10 @@
-### v0.0.3 2016-03-26
+### v0.1.0 2016-03-26
+
+* [FEATURE] Add `svg-filters` component.
+
+* [FEATURE] Add `filter-drop-shadow` component.
+
+* [FEATURE] Add `filter` mixin.
 
 * Update to Ember-cli 2.4.2
 
