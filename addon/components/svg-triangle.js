@@ -11,7 +11,7 @@ import layout from '../templates/components/svg-triangle';
   @uses SvgShapes.Mixins.SvgMixin
   @uses SvgShapes.Mixins.PolygonMixin
 */
-export default Ember.Component.extend( SvgMixin, {
+export default Ember.Component.extend(SvgMixin, {
 
   layout,
 
