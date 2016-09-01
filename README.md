@@ -122,3 +122,7 @@ ENV.contentSecurityPolicy = {
   'style-src': "'self' 'unsafe-inline'"
 }
 ```
+
+## Compatibility
+
+Ember version >= 1.13.13
