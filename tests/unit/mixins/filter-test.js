@@ -9,7 +9,7 @@ test('filterUrl', function(assert) {
 
   let subject = FilterObject.create();
   subject.set('filter', 'drop-shadow');
-  assert.equal(subject.get('filterUrl'), `url(http://localhost:4200/tests?hidepassed#drop-shadow)`);
+  assert.ok(subject.get('filterUrl').indexOf('#drop-shadow') !== -1);
 });
 
 test('filterUrl should return empty string if no filter is set', function(assert) {
