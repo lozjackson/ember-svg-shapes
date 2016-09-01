@@ -14,7 +14,7 @@ import layout from '../templates/components/filter-drop-shadow';
 
   ```
   {{#svg-triangle filter="drop-shadow"}}
-    {{filter-drop-shadow id="drop-shadow" dx="2" dx="4"}}
+    {{filter-drop-shadow id="drop-shadow" dx="2" dy="4"}}
   {{/svg-triangle}}
   ```
 
