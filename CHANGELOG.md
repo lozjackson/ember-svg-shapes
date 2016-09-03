@@ -1,6 +1,6 @@
 # Change Log
 
-### v0.1.1
+### v0.1.1 2016-09-03
 
 * Add Phantomjs dev-dependency.
 
