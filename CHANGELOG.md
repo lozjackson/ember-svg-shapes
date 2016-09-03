@@ -1,3 +1,16 @@
+# Change Log
+
+### v0.1.1
+
+* Add Phantomjs dev-dependency.
+
+* Configure Ember-try to include Ember ~2.4.0 (LTS).
+
+* Update to Ember-cli 2.7.0
+
+
+
+
 ### v0.1.0 2016-03-26
 
 * [FEATURE] Add `svg-filters` component.

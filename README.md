@@ -14,7 +14,7 @@ http://lozjackson.github.io/ember-svg-shapes/
 
 ## Installation
 
-* `npm install ember-svg-shapes --save-dev`
+* `ember install ember-svg-shapes`
 
 
 
@@ -23,7 +23,7 @@ http://lozjackson.github.io/ember-svg-shapes/
 
 * svg-circle
 
-  ```
+  ```hbs
   {{svg-circle
     size="10"
     fill="red"
@@ -34,7 +34,7 @@ http://lozjackson.github.io/ember-svg-shapes/
 
 * svg-square
 
-  ```
+  ```hbs
   {{svg-square
     size="10"
     fill="red"
@@ -47,7 +47,7 @@ http://lozjackson.github.io/ember-svg-shapes/
 
 * svg-rectangle
 
-  ```
+  ```hbs
   {{svg-rectangle
     size="1"
     fill="red"
@@ -62,7 +62,7 @@ http://lozjackson.github.io/ember-svg-shapes/
 
 * svg-triangle
 
-  ```
+  ```hbs
   {{svg-triangle
     size="10"
     fill="red"
@@ -74,7 +74,7 @@ http://lozjackson.github.io/ember-svg-shapes/
 
 * svg-star
 
-  ```
+  ```hbs
   {{svg-star
     size="50"
     fill="red"
@@ -94,15 +94,13 @@ All the parameters are optional.
 
 Add css class names to the component and style as you would normally do with an svg element.
 
-```
-//css
+```css
 .svg-triangle.green {
     fill: rgb(152, 208, 46);
 }
 ```
 
-```
-//hbs
+```hbs
 {{svg-triangle class="green"}}
 ```
 
@@ -117,7 +115,7 @@ If you get an error saying:
 
 You need to add/modify the content security policy directive.  In the `config/environment.js` file you need to have `'unsafe-inline'` in the `style-src`.
 
-```
+```js
 ENV.contentSecurityPolicy = {
   'style-src': "'self' 'unsafe-inline'"
 }
