@@ -6,6 +6,8 @@ import SvgMixin from 'ember-svg-shapes/mixins/svg';
 import FilterMixin from 'ember-svg-shapes/mixins/filter';
 import layout from '../templates/components/svg-triangle';
 
+const { assert, computed, Component } = Ember;
+
 /**
   # SvgTriangleComponent
 
@@ -24,7 +26,7 @@ import layout from '../templates/components/svg-triangle';
   @uses SvgShapes.Mixins.SvgMixin
   @uses SvgShapes.Mixins.FilterMixin
 */
-export default Ember.Component.extend(SvgMixin, FilterMixin, {
+export default Component.extend(SvgMixin, FilterMixin, {
 
   layout,
 
@@ -50,12 +52,12 @@ export default Ember.Component.extend(SvgMixin, FilterMixin, {
     @readonly
     @private
   */
-  points: Ember.computed('direction', 'size', function() {
+  points: computed('direction', 'size', function() {
     let points = [],
 		  size = this.get('size'),
       direction = this.get('direction');
 
-    Ember.assert('`size` must be a number greater than zero', !isNaN(size) && size > 0);
+    assert('`size` must be a number greater than zero', !isNaN(size) && size > 0);
 
 	  switch (direction) {
 		  case 'up':

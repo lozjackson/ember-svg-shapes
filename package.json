@@ -57,6 +57,10 @@
     "node": ">= 0.12.0"
   },
   "ember-addon": {
-    "configPath": "tests/dummy/config"
+    "configPath": "tests/dummy/config",
+    "demoURL": "http://lozjackson.github.io/ember-svg-shapes/",
+    "versionCompatibility": {
+      "ember": ">=1.13.0"
+    }
   }
 }

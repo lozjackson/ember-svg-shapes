@@ -6,6 +6,8 @@ import SvgMixin from 'ember-svg-shapes/mixins/svg';
 import FilterMixin from 'ember-svg-shapes/mixins/filter';
 import layout from '../templates/components/svg-star';
 
+const { assert, computed, Component } = Ember;
+
 /**
   # SvgStarComponent
 
@@ -25,7 +27,7 @@ import layout from '../templates/components/svg-star';
   @uses SvgShapes.Mixins.SvgMixin
   @uses SvgShapes.Mixins.FilterMixin
 */
-export default Ember.Component.extend(SvgMixin, FilterMixin, {
+export default Component.extend(SvgMixin, FilterMixin, {
 
   layout,
 
@@ -72,15 +74,15 @@ export default Ember.Component.extend(SvgMixin, FilterMixin, {
     @readonly
     @private
   */
-  points: Ember.computed( 'size', 'starPoints', 'innerPoints', function() {
+  points: computed( 'size', 'starPoints', 'innerPoints', function() {
 
     let points = [], r, x, y, center, outerRadius, innerRadius, angle,
   		size = this.get('size'),
       starPoints = this.get('starPoints'),
       innerPoints = this.get('innerPoints');
 
-    Ember.assert('`size` must be a number greater than zero', !isNaN(size) && size > 0);
-    Ember.assert('`starPoints` must be a number greater than zero', !isNaN(starPoints) && starPoints > 0);
+    assert('`size` must be a number greater than zero', !isNaN(size) && size > 0);
+    assert('`starPoints` must be a number greater than zero', !isNaN(starPoints) && starPoints > 0);
 
     center = size / 2;
 

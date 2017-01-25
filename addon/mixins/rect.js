@@ -3,11 +3,13 @@
 */
 import Ember from 'ember';
 
+const { assert, computed, Mixin, String: { htmlSafe} } = Ember;
+
 /**
   @class RectMixin
   @namespace SvgShapes.Mixins
 */
-export default Ember.Mixin.create({
+export default Mixin.create({
 
   /**
     @property left
@@ -85,9 +87,9 @@ export default Ember.Mixin.create({
     @readonly
     @private
   */
-  _height: Ember.computed('height', 'size', function() {
+  _height: computed('height', 'size', function() {
     let height = this.get('height') * this.get('size');
-    Ember.assert('`height` must be a number greater than zero', !isNaN(height) && height > 0);
+    assert('`height` must be a number greater than zero', !isNaN(height) && height > 0);
     return height;
   }),
 
@@ -100,9 +102,9 @@ export default Ember.Mixin.create({
     @readonly
     @private
   */
-  _width: Ember.computed('width', 'size', function() {
+  _width: computed('width', 'size', function() {
     let width = this.get('width') * this.get('size');
-    Ember.assert('`width` must be a number greater than zero', !isNaN(width) && width > 0);
+    assert('`width` must be a number greater than zero', !isNaN(width) && width > 0);
     return width;
   }),
 
@@ -113,15 +115,15 @@ export default Ember.Mixin.create({
     @type {String}
     @private
   */
-  style: Ember.computed('_height', '_width', function() {
+  style: computed('_height', '_width', function() {
 
     let height = this.get('_height'),
       width = this.get('_width');
 
-    Ember.assert('`_height` must be a number greater than zero', !isNaN(height) && height > 0);
-    Ember.assert('`_width` must be a number greater than zero', !isNaN(width) && width > 0);
+    assert('`_height` must be a number greater than zero', !isNaN(height) && height > 0);
+    assert('`_width` must be a number greater than zero', !isNaN(width) && width > 0);
 
-    return Ember.String.htmlSafe(`height:${height}px; width:${width}px;`);
+    return htmlSafe(`height:${height}px; width:${width}px;`);
   }),
 
   /**
@@ -133,7 +135,7 @@ export default Ember.Mixin.create({
     @readonly
     @private
   */
-  transform: Ember.computed( 'rotate', '_height', '_width', function() {
+  transform: computed( 'rotate', '_height', '_width', function() {
     var rotate = this.get('rotate'),
       cx = this.get('_width') / 2,
       cy = this.get('_height') / 2;
@@ -142,8 +144,8 @@ export default Ember.Mixin.create({
       rotate = 0;
     }
 
-    Ember.assert('`cx` must be a number greater than zero', !isNaN(cx) && cx > 0);
-    Ember.assert('`cy` must be a number greater than zero', !isNaN(cy) && cy > 0);
+    assert('`cx` must be a number greater than zero', !isNaN(cx) && cx > 0);
+    assert('`cy` must be a number greater than zero', !isNaN(cy) && cy > 0);
 
     return `rotate(${rotate}, ${cx}, ${cy})`;
   })

@@ -3,6 +3,8 @@
 */
 import Ember from 'ember';
 
+const { computed, Mixin } = Ember;
+
 /**
   # Filter Mixin
 
@@ -15,7 +17,7 @@ import Ember from 'ember';
   @class FilterMixin
   @namespace SvgShapes.Mixins
 */
-export default Ember.Mixin.create({
+export default Mixin.create({
 
   /**
     ## Filter
@@ -46,7 +48,7 @@ export default Ember.Mixin.create({
     @type {String}
     @private
   */
-  filterUrl: Ember.computed('filter', function() {
+  filterUrl: computed('filter', function() {
     let filter = this.get('filter');
     if (!filter) {
       return '';

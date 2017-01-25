@@ -7,6 +7,8 @@ import RectMixin from 'ember-svg-shapes/mixins/rect';
 import FilterMixin from 'ember-svg-shapes/mixins/filter';
 import layout from '../templates/components/svg-rectangle';
 
+const { Component } = Ember;
+
 /**
 
   # SvgRectangleComponent
@@ -31,7 +33,7 @@ import layout from '../templates/components/svg-rectangle';
   @uses SvgShapes.Mixins.RectMixin
   @uses SvgShapes.Mixins.FilterMixin
 */
-export default Ember.Component.extend(SvgMixin, RectMixin, FilterMixin, {
+export default Component.extend(SvgMixin, RectMixin, FilterMixin, {
 
   layout,
 
