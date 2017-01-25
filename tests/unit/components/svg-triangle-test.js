@@ -1,7 +1,4 @@
 import { moduleForComponent, test } from 'ember-qunit';
-// import Ember from 'ember';
-
-// const run = Ember.run;
 
 moduleForComponent('svg-triangle', 'Unit | Component | svg triangle', {
   // needs: [],
@@ -21,11 +18,4 @@ test('tagName', function(assert) {
   var component = this.subject();
   this.render();
   assert.equal(component.get('tagName'), 'svg');
-});
-
-test('classNames', function(assert) {
-  assert.expect(1);
-  var component = this.subject();
-  this.render();
-  assert.deepEqual(component.get('classNames'), ['ember-view', 'ember-svg-shapes', 'svg-triangle']);
 });

@@ -1,7 +1,6 @@
 import { moduleForComponent, test } from 'ember-qunit';
 
 moduleForComponent('filter-drop-shadow', 'Unit | Component | filter drop shadow', {
-  // needs: [],
   unit: true
 });
 

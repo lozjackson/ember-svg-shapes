@@ -4,7 +4,6 @@ import Ember from 'ember';
 const run = Ember.run;
 
 moduleForComponent('svg-circle', 'Unit | Component | svg circle', {
-  // needs: [],
   unit: true
 });
 
@@ -21,13 +20,6 @@ test('tagName', function(assert) {
   var component = this.subject();
   this.render();
   assert.equal(component.get('tagName'), 'svg');
-});
-
-test('classNames', function(assert) {
-  assert.expect(1);
-  var component = this.subject();
-  this.render();
-  assert.deepEqual(component.get('classNames'), ['ember-view', 'ember-svg-shapes', 'svg-circle']);
 });
 
 test('radius', function(assert) {
