@@ -6,6 +6,9 @@ import SvgMixin from 'ember-svg-shapes/mixins/svg';
 import FilterMixin from 'ember-svg-shapes/mixins/filter';
 import layout from '../templates/components/svg-circle';
 
+const { assert, computed, Component } = Ember;
+const { alias } = computed;
+
 /**
   # SvgCircleComponent
 
@@ -23,7 +26,7 @@ import layout from '../templates/components/svg-circle';
   @uses SvgShapes.Mixins.SvgMixin
   @uses SvgShapes.Mixins.FilterMixin
 */
-export default Ember.Component.extend(SvgMixin, FilterMixin, {
+export default Component.extend(SvgMixin, FilterMixin, {
 
   layout,
 
@@ -45,11 +48,11 @@ export default Ember.Component.extend(SvgMixin, FilterMixin, {
     @readonly
     @private
   */
-  radius: Ember.computed('size', function() {
+  radius: computed('size', function() {
     let size = this.get('size'),
       radius = size / 2;
 
-    Ember.assert('`radius` must be a number greater than zero', !isNaN(radius) && radius > 0);
+    assert('`radius` must be a number greater than zero', !isNaN(radius) && radius > 0);
 
     return radius;
   }),
@@ -62,5 +65,5 @@ export default Ember.Component.extend(SvgMixin, FilterMixin, {
     @private
     @readonly
   */
-  center: Ember.computed.alias('radius')
+  center: alias('radius')
 });

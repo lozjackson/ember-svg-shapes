@@ -7,7 +7,8 @@ import RectMixin from 'ember-svg-shapes/mixins/rect';
 import FilterMixin from 'ember-svg-shapes/mixins/filter';
 import layout from '../templates/components/svg-square';
 
-
+const { assert, computed, Component } = Ember;
+const { alias } = computed;
 
 /**
 
@@ -31,7 +32,7 @@ import layout from '../templates/components/svg-square';
   @uses SvgShapes.Mixins.RectMixin
   @uses SvgShapes.Mixins.FilterMixin
 */
-export default Ember.Component.extend(SvgMixin,  RectMixin, FilterMixin, {
+export default Component.extend(SvgMixin,  RectMixin, FilterMixin, {
 
   layout,
 
@@ -54,9 +55,9 @@ export default Ember.Component.extend(SvgMixin,  RectMixin, FilterMixin, {
     @readonly
     @private
   */
-  _height: Ember.computed('size', function() {
+  _height: computed('size', function() {
     let size = this.get('size');
-    Ember.assert('`size` must be a number greater than zero', !isNaN(size) && size > 0);
+    assert('`size` must be a number greater than zero', !isNaN(size) && size > 0);
     return size;
   }),
 
@@ -66,5 +67,5 @@ export default Ember.Component.extend(SvgMixin,  RectMixin, FilterMixin, {
     @readonly
     @private
   */
-  _width: Ember.computed.alias('_height')
+  _width: alias('_height')
 });

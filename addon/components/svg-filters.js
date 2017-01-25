@@ -4,6 +4,8 @@
 import Ember from 'ember';
 import layout from '../templates/components/svg-filters';
 
+const { Component } = Ember;
+
 /**
   # SvgFiltersComponent
 
@@ -33,7 +35,7 @@ import layout from '../templates/components/svg-filters';
   @class SvgFiltersComponent
   @namespace SvgShapes.Components
 */
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
 
   /**

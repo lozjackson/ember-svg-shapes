@@ -4,6 +4,8 @@
 import Ember from 'ember';
 import layout from '../templates/components/filter-drop-shadow';
 
+const { Component } = Ember;
+
 /**
   # FilterDropShadowComponent
 
@@ -36,7 +38,7 @@ import layout from '../templates/components/filter-drop-shadow';
   @class FilterDropShadowComponent
   @namespace SvgShapes.Components
 */
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
 
   /**

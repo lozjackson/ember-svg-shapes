@@ -3,11 +3,13 @@
 */
 import Ember from 'ember';
 
+const { assert, computed, Mixin, String: { htmlSafe} } = Ember;
+
 /**
   @class SvgMixin
   @namespace SvgShapes.Mixins
 */
-export default Ember.Mixin.create({
+export default Mixin.create({
 
   /**
     @property tagName
@@ -67,7 +69,7 @@ export default Ember.Mixin.create({
     ```
     {{svg-triangle fill="blue"}}
     ```
-    
+
     @property fill
     @type {String}
   */
@@ -89,10 +91,10 @@ export default Ember.Mixin.create({
     @type {String}
     @private
   */
-  style: Ember.computed('size', function() {
+  style: computed('size', function() {
       let size = this.get('size');
-      Ember.assert('`size` must be a number greater than zero', !isNaN(size) && size > 0);
-      return Ember.String.htmlSafe(`height:${size}px; width:${size}px;`);
+      assert('`size` must be a number greater than zero', !isNaN(size) && size > 0);
+      return htmlSafe(`height:${size}px; width:${size}px;`);
   }),
 
   /**
@@ -104,7 +106,7 @@ export default Ember.Mixin.create({
     @readonly
     @private
   */
-  transform: Ember.computed( 'rotate', 'size', function() {
+  transform: computed( 'rotate', 'size', function() {
     let rotate = this.get('rotate'),
       size = this.get('size'),
       center;
@@ -113,11 +115,11 @@ export default Ember.Mixin.create({
       rotate = 0;
     }
 
-    Ember.assert('`size` must be a number greater than zero', !isNaN(size) && size > 0);
+    assert('`size` must be a number greater than zero', !isNaN(size) && size > 0);
 
     center = size / 2;
 
-    Ember.assert('`center` must be a number greater than zero', !isNaN(center) && center > 0);
+    assert('`center` must be a number greater than zero', !isNaN(center) && center > 0);
 
     return `rotate(${rotate}, ${center}, ${center})`;
   })
