@@ -1,5 +1,7 @@
 # Change Log
 
+* [#6](https://github.com/lozjackson/ember-svg-shapes/pull/6) Update to Ember-cli 2.11.0
+
 ### v0.1.1 2016-09-03
 
 * Add Phantomjs dev-dependency.
