@@ -1,5 +1,7 @@
 # Change Log
 
+* [#8](https://github.com/lozjackson/ember-svg-shapes/pull/8) Update to Ember-cli 2.12.1
+
 ### v1.0.0 2017-01-25
 
 * [#7](https://github.com/lozjackson/ember-svg-shapes/pull/7) Use object destructuring.
