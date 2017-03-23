@@ -54,48 +54,48 @@ export default Component.extend(SvgMixin, FilterMixin, {
   */
   points: computed('direction', 'size', function() {
     let points = [],
-		  size = this.get('size'),
+      size = this.get('size'),
       direction = this.get('direction');
 
     assert('`size` must be a number greater than zero', !isNaN(size) && size > 0);
 
-	  switch (direction) {
-		  case 'up':
-		  case 'u':
-		  case 'n':
+    switch (direction) {
+      case 'up':
+      case 'u':
+      case 'n':
         points = [[0.5,0], 	[1,1], 		[0,1]	];
         break;
 
-    	case 'down':
-    	case 'd':
-    	case 's':
+      case 'down':
+      case 'd':
+      case 's':
         points = [[0,0], 	[1,0], 		[0.5,1]	];
         break;
 
-  		case 'left':
-  		case 'l':
-  		case 'w':
+      case 'left':
+      case 'l':
+      case 'w':
         points = [[0,0.5], 	[1,0], 		[1,1]	];
         break;
 
-  		case 'right':
-  		case 'r':
-  		case 'e':
+      case 'right':
+      case 'r':
+      case 'e':
         points = [[0,0], 	[1,0.5], 	[0,1]	];
         break;
 
       default:
         points = [[0,0], 	[1,0.5], 	[0,1]	];
         break;
-	  }
+    }
 
-  	points = points.map(function (p) {
-  		p = p.map(function (p) {
-  			return p * size;
-  		});
-  		return p.join(',');
-  	});
+    points = points.map(function (p) {
+      p = p.map(function (p) {
+        return p * size;
+      });
+      return p.join(',');
+    });
 
-	  return points.join(' ');
+    return points.join(' ');
   })
 });
