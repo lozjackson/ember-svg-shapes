@@ -77,7 +77,7 @@ export default Component.extend(SvgMixin, FilterMixin, {
   points: computed( 'size', 'starPoints', 'innerPoints', function() {
 
     let points = [], r, x, y, center, outerRadius, innerRadius, angle,
-  		size = this.get('size'),
+      size = this.get('size'),
       starPoints = this.get('starPoints'),
       innerPoints = this.get('innerPoints');
 
