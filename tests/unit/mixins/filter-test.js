@@ -1,11 +1,11 @@
-import Ember from 'ember';
+import EmberObject from '@ember/object';
 import FilterMixin from 'ember-svg-shapes/mixins/filter';
 import { module, test } from 'qunit';
 
 module('Unit | Mixin | filter');
 
 test('filterUrl', function(assert) {
-  let FilterObject = Ember.Object.extend(FilterMixin);
+  let FilterObject = EmberObject.extend(FilterMixin);
 
   let subject = FilterObject.create();
   subject.set('filter', 'drop-shadow');
@@ -13,7 +13,7 @@ test('filterUrl', function(assert) {
 });
 
 test('filterUrl should return empty string if no filter is set', function(assert) {
-  let FilterObject = Ember.Object.extend(FilterMixin);
+  let FilterObject = EmberObject.extend(FilterMixin);
 
   let subject = FilterObject.create();
   subject.set('filter', null);

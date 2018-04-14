@@ -1,6 +1,8 @@
-import Ember from 'ember';
+import Controller from '@ember/controller';
+import { A } from '@ember/array';
+import $ from 'jquery';
 
-export default Ember.Controller.extend({
+export default Controller.extend({
 
   direction: 'up',
 
@@ -12,8 +14,8 @@ export default Ember.Controller.extend({
 
   actions: {
     changeDirection() {
-      let content = Ember.A(['up', 'down', 'left', 'right']);
-      let selectedEl    = Ember.$('#direction')[0];
+      let content = A(['up', 'down', 'left', 'right']);
+      let selectedEl    = $('#direction')[0];
       let selectedIndex = selectedEl.selectedIndex;
       let selectedValue = content.objectAt(selectedIndex);
       this.set('direction', selectedValue);

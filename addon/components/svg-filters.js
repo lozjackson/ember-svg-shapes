@@ -1,10 +1,8 @@
 /**
   @module ember-svg-shapes
 */
-import Ember from 'ember';
+import Component from '@ember/component';
 import layout from '../templates/components/svg-filters';
-
-const { Component } = Ember;
 
 /**
   # SvgFiltersComponent
@@ -54,5 +52,5 @@ export default Component.extend({
     @default ['ember-svg-shapes', 'svg-filters']
     @private
   */
-  classNames: ['ember-svg-shapes', 'svg-filters'],
+  classNames: ['ember-svg-shapes', 'svg-filters']
 });

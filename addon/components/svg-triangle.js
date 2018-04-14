@@ -1,12 +1,12 @@
 /**
   @module ember-svg-shapes
 */
-import Ember from 'ember';
+import Component from '@ember/component';
 import SvgMixin from 'ember-svg-shapes/mixins/svg';
 import FilterMixin from 'ember-svg-shapes/mixins/filter';
 import layout from '../templates/components/svg-triangle';
-
-const { assert, computed, Component } = Ember;
+import { computed } from '@ember/object';
+import { assert } from '@ember/debug';
 
 /**
   # SvgTriangleComponent

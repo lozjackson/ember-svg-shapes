@@ -1,9 +1,10 @@
 /**
   @module ember-svg-shapes
 */
-import Ember from 'ember';
-
-const { assert, computed, Mixin, String: { htmlSafe} } = Ember;
+import Mixin from '@ember/object/mixin';
+import { htmlSafe } from '@ember/string';
+import { computed } from '@ember/object';
+import { assert } from '@ember/debug';
 
 /**
   @class SvgMixin
