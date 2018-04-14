@@ -1,13 +1,13 @@
 /**
   @module ember-svg-shapes
 */
-import Ember from 'ember';
+import Component from '@ember/component';
 import SvgMixin from 'ember-svg-shapes/mixins/svg';
 import FilterMixin from 'ember-svg-shapes/mixins/filter';
 import layout from '../templates/components/svg-circle';
-
-const { assert, computed, Component } = Ember;
-const { alias } = computed;
+import { computed } from '@ember/object';
+import { alias } from '@ember/object/computed';
+import { assert } from '@ember/debug';
 
 /**
   # SvgCircleComponent

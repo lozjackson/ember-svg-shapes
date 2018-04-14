@@ -1,13 +1,11 @@
 /**
   @module ember-svg-shapes
 */
-import Ember from 'ember';
+import Component from '@ember/component';
 import SvgMixin from 'ember-svg-shapes/mixins/svg';
 import RectMixin from 'ember-svg-shapes/mixins/rect';
 import FilterMixin from 'ember-svg-shapes/mixins/filter';
 import layout from '../templates/components/svg-rectangle';
-
-const { Component } = Ember;
 
 /**
 

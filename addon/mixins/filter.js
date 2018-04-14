@@ -1,9 +1,8 @@
 /**
   @module ember-svg-shapes
 */
-import Ember from 'ember';
-
-const { computed, Mixin } = Ember;
+import Mixin from '@ember/object/mixin';
+import { computed } from '@ember/object';
 
 /**
   # Filter Mixin
